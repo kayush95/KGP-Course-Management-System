@@ -1,0 +1,5 @@
+INSERT INTO courses SET course_name='BS',course_category='Biology',course_admin=5,air_date='2016-08-12',brief_overview='Just learn it'
+
+SELECT topics.top_id,topics.top_name FROM topics ,
+      {SELECT coursetop.top_id FROM topics INNER JOIN coursetop ON topics.top_id=coursetop.top_id WHERE coursetop.c_id = 2} as corid
+      WHERE corid.top_id=topics.top_id
